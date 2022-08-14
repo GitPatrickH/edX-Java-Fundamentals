@@ -3,7 +3,7 @@ import java.util.List;
 
 public class ControlFlow {
     public static List<Short> onlyEvens() {
-        List<Short> evens = new ArrayList<Short>();
+        List<Short> evens = new ArrayList<>();
 
         for (short i = 1; i < 100; i++) {
             if ((i & 1) == 0) {
@@ -14,7 +14,7 @@ public class ControlFlow {
     }
 
     //Complete the code so that the program print only odd numbers between 0 and 100.
-    public static List<Short> onlyEvens(final short start, final short end) {
+    public static List<Short> onlyEvens(final Short start, final Short end) {
         List<Short> evens = new ArrayList<Short>();
 
         for (short i = start; i < end; i++) {
