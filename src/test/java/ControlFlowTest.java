@@ -8,18 +8,23 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ControlFlowTest {
 
-    ControlFlow testSubject;
-
     @Test
-    void isEmpty(){
-        List<Short> result = testSubject.onlyEvens((short) 1, (short)1);
-        Assertions.assertTrue(result.isEmpty());
+    void testNullInput() {
+        Assertions.assertThrows(NullPointerException.class, () -> ControlFlow.onlyEvens(null, null));
     }
 
     @Test
-    void onlyEvensTest(){
-        List<Short> result = testSubject.onlyEvens();
+    void testEmptyInput() {
+        List<Short> result = ControlFlow.onlyEvens();
         Assertions.assertFalse(result.isEmpty());
         Assertions.assertEquals(49, result.size());
+    }
+
+    @Test
+    void testOnlyEvens() {
+        List<Short> result = ControlFlow.onlyEvens((short) 1, (short) 1);
+        Assertions.assertTrue(result.isEmpty());
+        result = ControlFlow.onlyEvens((short) 1, (short) 99);
+        Assertions.assertFalse(result.isEmpty());
     }
 }
